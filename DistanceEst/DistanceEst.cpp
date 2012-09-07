@@ -184,7 +184,7 @@ static int estimateDistance(unsigned len0, unsigned len1,
 	fragments.erase(unique(fragments.begin(), fragments.end()),
 			fragments.end());
 	numPairs = fragments.size();
-	if (numPairs < opt::npairs)
+	if (numPairs < opt::npairs || len0 < opt::minAlign || len1 < opt::minAlign)
 		return INT_MIN;
 
 	vector<int> fragmentSizes;
